@@ -1,6 +1,7 @@
 # TF Assessment
 
 ## Project Structure
+```shell
 tf-assessment/
 │
 ├── modules/                  # Directory for Terraform modules
@@ -21,3 +22,4 @@ tf-assessment/
 ├── variables.tf              # Global variables definition file
 ├── outputs.tf                # Global outputs definition file
 └── terraform.tfstate         # Terraform state file (typically ignored in .gitignore for remote state)
+```
