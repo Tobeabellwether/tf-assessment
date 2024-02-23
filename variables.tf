@@ -8,10 +8,21 @@ variable "gcp_project" {
   type        = string
 }
 
-variable "gcp_region" {
-  description = "The GCP region"
+variable "gcp_zone" {
+  description = "The GCP zone"
   type        = string
 }
+
+variable "user_name" {
+  description = "User name"
+  type        = string
+}
+
+variable "public_ssh_key_path" {
+  description = "Public SSH key path"
+  type        = string
+}
+
 
 variable "instance_prefix" {
   description = "Prefix for the instance names"
