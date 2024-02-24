@@ -25,6 +25,10 @@ module "compute_instances" {
 }
 
 output "instance_root_passwords" {
-  value     = module.compute_instances.root_passwords
+  value     = module.compute_instances.instance_root_passwords
   sensitive = true
+}
+
+output "instance_ips" {
+  value = module.compute_instances.instance_ips
 }

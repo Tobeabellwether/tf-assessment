@@ -23,3 +23,14 @@ tf-assessment/
 ├── outputs.tf                # Global outputs definition file
 └── terraform.tfstate         # Terraform state file (typically ignored in .gitignore for remote state)
 ```
+
+## Run
+```shell
+terraform apply
+terraform output -json instance_ips > instance_ips.json
+python3 ping.py
+```
+
+## Output
+![alt text](output1.png)
+![alt text](output2.png)
