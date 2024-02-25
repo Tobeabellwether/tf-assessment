@@ -23,7 +23,6 @@ tf-assessment/
 ## Run
 ```shell
 terraform apply
-terraform output -json instance_ips > instance_ips.json
 python3 ping.py
 ```
 
