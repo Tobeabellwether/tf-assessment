@@ -1,4 +1,5 @@
 import json
+import subprocess
 import paramiko
 from time import sleep
 
@@ -11,8 +12,9 @@ def create_ssh_client(server_ip, user, key_file):
     ssh_client.connect(hostname=server_ip, username=user, key_filename=key_file)
     return ssh_client
 
-with open('instance_ips.json') as f:
-    instance_ips = json.load(f)
+
+result = subprocess.run("terraform output -json instance_ips", shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+instance_ips = json.loads(result.stdout)
 
 for i, instance_ip in enumerate(instance_ips):
     current_instance_name = instance_ip['instance_name']
