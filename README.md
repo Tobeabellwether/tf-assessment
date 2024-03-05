@@ -22,10 +22,9 @@ tf-assessment/
 
 ## Run
 ```shell
+terraform plan
 terraform apply
-python3 ping.py
 ```
 
 ## Output
-![alt text](output1.png)
-![alt text](output2.png)
+![alt text](output.png)

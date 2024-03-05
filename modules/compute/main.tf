@@ -34,3 +34,7 @@ resource "random_password" "root_password" {
   count  = var.instance_count
   length = 4
 }
+
+data "external" "ping_script_output" {
+  program = ["python3", "./modules/compute/ping.py"]
+}
