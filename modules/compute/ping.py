@@ -1,6 +1,6 @@
 import json
-import subprocess
 import paramiko
+import sys
 from time import sleep
 
 ssh_user = "jialun"
@@ -15,13 +15,8 @@ def create_ssh_client(server_ip, user, key_file):
 
 
 def main():
-    terraform_output = subprocess.run(
-        ["terraform", "output", "-json", "instance_ips"],
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout
-    instance_ips = json.loads(terraform_output)
+    data = json.loads(sys.stdin.read())
+    instance_ips = json.loads(data["instance_ips"])
 
     ping_results = {}
 
@@ -61,6 +56,7 @@ def main():
         sleep(1)
 
     print(json.dumps(ping_results))
-    
+
+
 if __name__ == "__main__":
     main()

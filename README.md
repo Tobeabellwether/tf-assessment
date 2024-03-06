@@ -27,4 +27,4 @@ terraform apply
 ```
 
 ## Output
-![alt text](output.png)
+![alt text](output.jpg)

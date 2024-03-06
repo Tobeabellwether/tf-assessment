@@ -16,7 +16,6 @@ variable "public_ssh_key_path" {
 variable "instance_prefix" {
   description = "Prefix for the instance names"
   type        = string
-  default     = "node"
 }
 
 variable "instance_count" {

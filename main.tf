@@ -29,10 +29,6 @@ output "instance_root_passwords" {
   sensitive = true
 }
 
-output "instance_ips" {
-  value = module.compute_instances.instance_ips
-}
-
 output "ping_output" {
   value = module.compute_instances.ping_output
 }

@@ -37,4 +37,13 @@ resource "random_password" "root_password" {
 
 data "external" "ping_script_output" {
   program = ["python3", "./modules/compute/ping.py"]
+  query = {
+    instance_ips = jsonencode([
+      for instance in google_compute_instance.instance : {
+        instance_name = instance.name
+        internal_ip   = instance.network_interface[0].network_ip
+        external_ip   = instance.network_interface[0].access_config[0].nat_ip
+      }
+    ])
+  }
 }
